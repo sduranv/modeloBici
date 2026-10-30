@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soporte Bici 3D</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <button class="icon-btn only-mobile" id="toggle-left" aria-label="Mostrar panel">☰</button>
+      <strong>Soporte notebook</strong><span class="muted">LuckySports semirreclinada</span>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-page="viewer" class="active">Visor 3D</button>
+      <button role="tab" data-page="docs">Planos y fabricación</button>
+    </nav>
+  </header>
+
+  <div class="page" id="page-viewer">
+    <aside class="left" id="left">
+      <section>
+        <h3>Tutorial</h3>
+        <ol class="stage-tree" id="stage-tree"></ol>
+      </section>
+      <section>
+        <h3>Componentes</h3>
+        <div id="comp-tree" class="comp-tree"></div>
+      </section>
+    </aside>
+
+    <section class="stage">
+      <div id="viewport" class="viewport"></div>
+      <div class="views">
+        <button data-view="iso">Iso</button>
+        <button data-view="front">Frente</button>
+        <button data-view="side">Lateral</button>
+        <button data-view="top">Superior</button>
+        <button data-view="stage" title="Vista recomendada de la etapa">Etapa</button>
+      </div>
+      <div class="caption" id="caption">
+        <div class="cap-head"><span id="cap-stage"></span><span class="muted" id="cap-step"></span></div>
+        <p id="cap-text"></p>
+      </div>
+      <div class="card info" id="info" hidden>
+        <button class="close" id="info-close" aria-label="Cerrar">×</button>
+        <div id="info-body"></div>
+      </div>
+      <div class="card checks" id="checks" hidden></div>
+
+      <footer class="controls">
+        <div class="btns">
+          <button id="prev" title="Etapa anterior">⏮</button>
+          <button id="play" title="Reproducir / pausar">▶</button>
+          <button id="restart" title="Reiniciar etapa">↺</button>
+          <button id="next" title="Etapa siguiente">⏭</button>
+        </div>
+        <div class="progress">
+          <div class="segments" id="segments"></div>
+          <input type="range" id="scrub" min="0" max="1000" value="0" aria-label="Tiempo de la etapa" />
+        </div>
+        <div class="toggles">
+          <label class="seg"><span>Equipo</span>
+            <select id="device">
+              <option value="laptop">Notebook 14"</option>
+              <option value="keyboard">Teclado + mouse</option>
+            </select>
+          </label>
+          <button id="jump-installed" title="Ver soporte instalado">Instalado</button>
+          <button id="jump-parts" title="Ver soporte desmontado">Desmontado</button>
+        </div>
+      </footer>
+    </section>
+  </div>
+
+  <div class="page doc-page" id="page-docs" hidden></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

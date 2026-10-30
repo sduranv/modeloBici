@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+
+# Fotografias y videos personales usados solo como referencia de modelado.
+referencias/
+.claude/
